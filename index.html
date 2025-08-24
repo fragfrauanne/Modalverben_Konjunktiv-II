@@ -15,25 +15,22 @@
       align-items: center;
     }
 
-    table {
-      border-collapse: separate;
-      border-spacing: 8px;
-    }
+    table { border-collapse: separate; border-spacing: 8px; }
     th, td {
       padding: 1rem;
       text-align: center;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    th {
-      font-size: 1.1rem;
-      color: white;
-    }
+    th { font-size: 1.1rem; color: white; }
+
     .header-konnen { background-color: #e6df7b; }
     .header-wollen { background-color: #b8e994; }
     .header-sollen { background-color: #b4e1ba; }
-    .header-mogen { background-color: #cfaee1; }
-    .header-mochten { background-color: #e0a7c5; }
+    /* Neuer kombinierter Header mit Verlauf (mögen + möchten) */
+    .header-mogenmochten { 
+      background: linear-gradient(90deg, #cfaee1 0%, #e0a7c5 100%);
+    }
     .header-mussen { background-color: #a6c9eb; }
     .header-durfen { background-color: #6a96d9; }
 
@@ -44,16 +41,15 @@
     .label-ihr { background-color: #f7d47a; }
     .label-sie { background-color: #f4e187; }
 
-    .row-label {
-      color: white;
-      font-weight: bold;
-    }
+    .row-label { color: white; font-weight: bold; }
 
     .td-konnen { background-color: #f5f2b1; }
     .td-wollen { background-color: #d8f5c2; }
     .td-sollen { background-color: #d2f0d7; }
-    .td-mogen { background-color: #e6d3ef; }
-    .td-mochten { background-color: #f0c8da; }
+    /* Neuer kombinierter Zellenverlauf (mögen + möchten) */
+    .td-mogenmochten { 
+      background: linear-gradient(90deg, #e6d3ef 0%, #f0c8da 100%);
+    }
     .td-mussen { background-color: #cddff4; }
     .td-durfen { background-color: #a3bce7; }
 
@@ -68,15 +64,15 @@
   <table>
     <thead>
       <tr>
-        <th colspan="8" style="background-color:transparent; color:black; font-size:1.4rem; text-align:center; border-radius:none; box-shadow: none;">Modalverben / Konjunktiv II</th>
+        <!-- 1 (Label) + 6 Spalten = 7 -->
+        <th colspan="7" style="background-color:transparent; color:black; font-size:1.4rem; text-align:center; border-radius:none; box-shadow:none;">Modalverben / Konjunktiv II</th>
       </tr>
       <tr>
         <th style="background-color: transparent; box-shadow: none;"></th>
         <th class="header-konnen">können<br><small>could</small></th>
         <th class="header-wollen">wollen<br><small>would want</small></th>
         <th class="header-sollen">sollen<br><small>should (subj.)</small></th>
-        <th class="header-mogen">mögen<br><small>would like</small></th>
-        <th class="header-mochten">möchten<br><small>would like (polite)</small></th>
+        <th class="header-mogenmochten">mögen / möchten<br><small>would like</small></th>
         <th class="header-mussen">müssen<br><small>would have to</small></th>
         <th class="header-durfen">dürfen<br><small>would be allowed</small></th>
       </tr>
@@ -85,67 +81,61 @@
       <tr>
         <td class="row-label label-ich">ich</td>
         <td class="td-konnen">könnte</td>
-        <td class="td-wollen">würde wollen</td>
+        <td class="td-wollen">wollte</td>
         <td class="td-sollen">sollte</td>
-        <td class="td-mogen">möchte</td>
-        <td class="td-mochten">möchte</td>
+        <td class="td-mogenmochten">möchte</td>
         <td class="td-mussen">müsste</td>
         <td class="td-durfen">dürfte</td>
       </tr>
       <tr>
         <td class="row-label label-du">du</td>
         <td class="td-konnen">könntest</td>
-        <td class="td-wollen">würdest wollen</td>
+        <td class="td-wollen">wolltest</td>
         <td class="td-sollen">solltest</td>
-        <td class="td-mogen">möchtest</td>
-        <td class="td-mochten">möchtest</td>
+        <td class="td-mogenmochten">möchtest</td>
         <td class="td-mussen">müsstest</td>
         <td class="td-durfen">dürftest</td>
       </tr>
       <tr>
         <td class="row-label label-erseies">er/sie/es</td>
         <td class="td-konnen">könnte</td>
-        <td class="td-wollen">würde wollen</td>
+        <td class="td-wollen">wollte</td>
         <td class="td-sollen">sollte</td>
-        <td class="td-mogen">möchte</td>
-        <td class="td-mochten">möchte</td>
+        <td class="td-mogenmochten">möchte</td>
         <td class="td-mussen">müsste</td>
         <td class="td-durfen">dürfte</td>
       </tr>
       <tr>
         <td class="row-label label-wir">wir</td>
         <td class="td-konnen">könnten</td>
-        <td class="td-wollen">würden wollen</td>
+        <td class="td-wollen">wollten</td>
         <td class="td-sollen">sollten</td>
-        <td class="td-mogen">möchten</td>
-        <td class="td-mochten">möchten</td>
+        <td class="td-mogenmochten">möchten</td>
         <td class="td-mussen">müssten</td>
         <td class="td-durfen">dürften</td>
       </tr>
       <tr>
         <td class="row-label label-ihr">ihr</td>
         <td class="td-konnen">könntet</td>
-        <td class="td-wollen">würdet wollen</td>
+        <td class="td-wollen">wolltet</td>
         <td class="td-sollen">solltet</td>
-        <td class="td-mogen">möchtet</td>
-        <td class="td-mochten">möchtet</td>
+        <td class="td-mogenmochten">möchtet</td>
         <td class="td-mussen">müsstet</td>
         <td class="td-durfen">dürftet</td>
       </tr>
       <tr>
         <td class="row-label label-sie">sie/Sie</td>
         <td class="td-konnen">könnten</td>
-        <td class="td-wollen">würden wollen</td>
+        <td class="td-wollen">wollten</td>
         <td class="td-sollen">sollten</td>
-        <td class="td-mogen">möchten</td>
-        <td class="td-mochten">möchten</td>
+        <td class="td-mogenmochten">möchten</td>
         <td class="td-mussen">müssten</td>
         <td class="td-durfen">dürften</td>
       </tr>
     </tbody>
   </table>
   <footer style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #555;">
-  © Anne Felgentreu (08.2025)
+    © Anne Felgentreu (06.2025)
   </footer>
 </body>
 </html>
